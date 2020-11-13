@@ -1,0 +1,7 @@
+FROM xirenhua/miniconda3:latest
+
+COPY env.yaml .
+
+RUN conda env create -f env.yaml && \
+    conda clean -a && \
+    echo "conda activate main" >> ~/.bashrc
