@@ -1,8 +1,6 @@
-FROM xirenhua/miniconda3:latest
+FROM xirenhua/cuda_miniconda:cuda10.0
 
 COPY env.yaml .
 
 RUN conda env create -f env.yaml && \
     conda clean -ay
-
-ENTRYPOINT ["conda" "run" "-n" "main"]
